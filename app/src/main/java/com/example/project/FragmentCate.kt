@@ -21,6 +21,7 @@ class FragmentCate : Fragment() {
         return inflater.inflate(R.layout.fragment_cate, container, false)
     }
 
+
     companion object {
         @JvmStatic
         fun newInstance() =
