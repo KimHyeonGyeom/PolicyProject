@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_alignParentBottom="true"
     android:orientation="vertical"
-    android:id="@+id/iv_layout"
+    android:id="@+id/ll_layout"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -21,14 +21,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/toolbar_title"
+            android:id="@+id/tv_title"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@android:color/black"/>
 
     </com.google.android.material.appbar.MaterialToolbar>
     <ScrollView
-        android:id="@+id/scroll"
+        android:id="@+id/scrollView"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,7 +64,8 @@
 <!--        </LinearLayout>-->
 
         <com.asksira.loopingviewpager.LoopingViewPager
-            android:id="@+id/viewPager"
+
+            android:id="@+id/vp_banner"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginTop="16dp"
@@ -97,7 +98,8 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvMain"
+            android:layout_marginTop="20dp"
+            android:id="@+id/rv_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
