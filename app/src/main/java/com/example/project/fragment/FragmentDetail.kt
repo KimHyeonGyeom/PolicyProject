@@ -23,7 +23,7 @@ class FragmentDetail(fm : FragmentManager) : FragmentPagerAdapter(fm) {
     private var mFragmentTitleList= ArrayList<String>()
 
     override fun getItem(position: Int): Fragment {
-        return mFragmentList.get(position)
+        return mFragmentList[position]
     }
 
     override fun getCount(): Int {
@@ -32,11 +32,10 @@ class FragmentDetail(fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
     fun addFragment(fragment: Fragment, title: String) {
         mFragmentList.add(fragment)
-      //  mFragmentTitleList = title
         mFragmentTitleList.add(title)
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return mFragmentTitleList.get(position)
+        return mFragmentTitleList[position]
     }
  }

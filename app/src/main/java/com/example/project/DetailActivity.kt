@@ -1,6 +1,7 @@
 package com.example.project
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
@@ -8,8 +9,10 @@ import com.example.project.fragment.FragmentDetail
 import com.example.project.fragment.FragmentMain
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_main.*
 
 import kotlinx.android.synthetic.main.details_screen.*
+import kotlinx.android.synthetic.main.details_screen.tv_title
 
 
 class DetailActivity() : AppCompatActivity() {
@@ -38,17 +41,16 @@ class DetailActivity() : AppCompatActivity() {
 
         val adapter = FragmentDetail(getSupportFragmentManager())
 
-        var firstFragmet: FragmentMain = FragmentMain.newInstance("First Fragment")
-        var secondFragmet: FragmentMain = FragmentMain.newInstance("Second Fragment")
-        var thirdFragmet: FragmentMain = FragmentMain.newInstance("Third Fragment")
+        //var firstFragmet: FragmentMain = FragmentMain.newInstance("First Fragment")
+        //var secondFragmet: FragmentMain = FragmentMain.newInstance("Second Fragment")
+        //var thirdFragmet: FragmentMain = FragmentMain.newInstance("Third Fragment")
 
         var names: ArrayList<String> = ArrayList(getPolicyData(category!!))
 
         tabs_main.tabCount = names.count()
 
-        //adapter.addFragment(firstFragmet, names)
         for (i in 0 until names.count()){
-            adapter.addFragment(FragmentMain.newInstance("First Fragment"),names[i].toString())
+            adapter.addFragment(FragmentMain.newInstance("First Fragment$i"),names[i].toString())
         }
         viewpager!!.adapter = adapter
 
@@ -57,7 +59,30 @@ class DetailActivity() : AppCompatActivity() {
        // com.example.project.adapter.addFragment(secondFragmet, "TWO")
       //  com.example.project.adapter.addFragment(thirdFragmet,"THREE")
 
-
+//        vp_detailPage.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+//            override fun onPageScrolled(
+//                    position: Int,
+//                    positionOffset: Float,
+//                    positionOffsetPixels: Int
+//            ) { /*empty*/
+//
+//            }
+//
+//            override fun onPageSelected(position: Int) {
+//                Log.i("DraggerState2", "$position")
+//              //  pageIndicatorView.selection = position % imgs.size
+//            }
+//
+//            override fun onPageScrollStateChanged(state: Int) { /*empty*/
+//                Log.i("DraggerState", "$state")
+////                if (state == 1)
+////                    vp_banner.pauseAutoScroll()
+////                else
+////                    vp_banner.resumeAutoScroll()
+//
+//            }
+//
+//        })
 
     }
 
