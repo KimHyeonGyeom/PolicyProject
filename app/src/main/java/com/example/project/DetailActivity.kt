@@ -1,7 +1,7 @@
 package com.example.project
 
+
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
@@ -9,10 +9,8 @@ import com.example.project.fragment.FragmentDetail
 import com.example.project.fragment.FragmentMain
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_main.*
-
-import kotlinx.android.synthetic.main.details_screen.*
-import kotlinx.android.synthetic.main.details_screen.tv_title
+import kotlinx.android.synthetic.main.activity_main.tv_title
+import kotlinx.android.synthetic.main.details_main.*
 
 
 class DetailActivity() : AppCompatActivity() {
@@ -20,16 +18,17 @@ class DetailActivity() : AppCompatActivity() {
     private lateinit var tabs: TabLayout
     private lateinit var viewpager: ViewPager
     private val category by lazy { intent.getStringExtra("category_name")  }
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.details_screen)
+        setContentView(R.layout.details_main)
 
         val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         initViews()
         setupViewPager()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -39,20 +38,16 @@ class DetailActivity() : AppCompatActivity() {
     }
     private fun setupViewPager() {
 
-        val adapter = FragmentDetail(getSupportFragmentManager())
-
-        //var firstFragmet: FragmentMain = FragmentMain.newInstance("First Fragment")
-        //var secondFragmet: FragmentMain = FragmentMain.newInstance("Second Fragment")
-        //var thirdFragmet: FragmentMain = FragmentMain.newInstance("Third Fragment")
-
+        val adapter = FragmentDetail(supportFragmentManager)
         var names: ArrayList<String> = ArrayList(getPolicyData(category!!))
 
         tabs_main.tabCount = names.count()
 
         for (i in 0 until names.count()){
-            adapter.addFragment(FragmentMain.newInstance("First Fragment$i"),names[i].toString())
+            adapter.addFragment(FragmentMain.newInstance(names[i].toString()), names[i].toString())
         }
         viewpager!!.adapter = adapter
+        //viewpager.setOffscreenPageLimit(2);
 
         tabs!!.setupWithViewPager(viewpager)
 

@@ -2,20 +2,18 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:foreground="?attr/selectableItemBackground"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="20dp"
         android:id="@+id/rv_detail_category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </androidx.recyclerview.widget.RecyclerView>
-
-       <TextView
-           android:id="@+id/tv_text"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:foreground="?attr/selectableItemBackground"
+        android:background="@android:color/white">
 
+    </androidx.recyclerview.widget.RecyclerView>
 </FrameLayout>

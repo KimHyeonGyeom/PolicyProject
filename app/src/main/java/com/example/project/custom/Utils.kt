@@ -6,7 +6,7 @@ import android.util.DisplayMetrics
 import android.view.WindowManager
 
 
-class Utils {
+object Utils {
 
     private val WIDTH_INDEX = 0
     private val HEIGHT_INDEX = 1

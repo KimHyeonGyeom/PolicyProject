@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:attr/selectableItemBackground"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -30,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
         <com.example.project.custom.CustomTabLayout
             android:id="@+id/tabs_main"
             android:layout_width="match_parent"
@@ -41,13 +43,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"        >
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_detailPage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackground"
+
             android:gravity="center"
             android:textColor="#ffffff"
             android:textSize="20sp"

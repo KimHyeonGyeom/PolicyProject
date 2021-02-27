@@ -29,7 +29,7 @@ class CustomTabLayout : TabLayout {
     }
 
     private fun initTabMinWidth(tabCount: Int) {
-        val wh: IntArray =  Utils().getScreenSize(context)
+        val wh: IntArray =  Utils.getScreenSize(context)
         val tabMinWidth = wh[WIDTH_INDEX] / tabCount
         val field: Field
         try {
